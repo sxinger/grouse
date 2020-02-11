@@ -1,6 +1,6 @@
 -- Copyright (c) 2020 University of Kansas Medical Center
 
-/*a more elegant solution using cursor, dynamic sql and for loop, need to test efficiency*/
+/*a sql solution using cursor, dynamic query and for loop, need to test efficiency*/
 
 -- make sure the sql statement is correct
 --select 'INSERT INTO /*+ APPEND*/ date_events'
@@ -26,7 +26,7 @@ declare
               else 0
          end as msis_ind
    from all_tab_columns
-   where owner in ('$$new_CMS_schema1','$$new_CMS_schema2') and 
+   where owner = '$$new_CMS_schema1' and 
          data_type = 'DATE';
 begin
   for rec in date_col
@@ -59,6 +59,5 @@ end;
 
 /*~ 100sec/rec*/
 
-select * from date_events;
 
 
