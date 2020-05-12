@@ -79,18 +79,18 @@ from CMS_DEID.mbsf_ab_summary
 unpivot(
         (buyin, hmo)
         for mo in (
-            (bene_mdcr_entlmt_buyin_ind_01,bene_hmo_ind_01) as 1
-          , (bene_mdcr_entlmt_buyin_ind_02,bene_hmo_ind_02) as 2
-          , (bene_mdcr_entlmt_buyin_ind_03,bene_hmo_ind_03) as 3
-          , (bene_mdcr_entlmt_buyin_ind_04,bene_hmo_ind_04) as 4
-          , (bene_mdcr_entlmt_buyin_ind_05,bene_hmo_ind_05) as 5
-          , (bene_mdcr_entlmt_buyin_ind_06,bene_hmo_ind_06) as 6
-          , (bene_mdcr_entlmt_buyin_ind_07,bene_hmo_ind_07) as 7
-          , (bene_mdcr_entlmt_buyin_ind_08,bene_hmo_ind_08) as 8
-          , (bene_mdcr_entlmt_buyin_ind_09,bene_hmo_ind_09) as 9
-          , (bene_mdcr_entlmt_buyin_ind_10,bene_hmo_ind_10) as 10
-          , (bene_mdcr_entlmt_buyin_ind_11,bene_hmo_ind_11) as 11
-          , (bene_mdcr_entlmt_buyin_ind_12,bene_hmo_ind_12) as 12
+            (bene_mdcr_entlmt_buyin_ind_01, bene_hmo_ind_01) as 1
+          , (bene_mdcr_entlmt_buyin_ind_02, bene_hmo_ind_02) as 2
+          , (bene_mdcr_entlmt_buyin_ind_03, bene_hmo_ind_03) as 3
+          , (bene_mdcr_entlmt_buyin_ind_04, bene_hmo_ind_04) as 4
+          , (bene_mdcr_entlmt_buyin_ind_05, bene_hmo_ind_05) as 5
+          , (bene_mdcr_entlmt_buyin_ind_06, bene_hmo_ind_06) as 6
+          , (bene_mdcr_entlmt_buyin_ind_07, bene_hmo_ind_07) as 7
+          , (bene_mdcr_entlmt_buyin_ind_08, bene_hmo_ind_08) as 8
+          , (bene_mdcr_entlmt_buyin_ind_09, bene_hmo_ind_09) as 9
+          , (bene_mdcr_entlmt_buyin_ind_10, bene_hmo_ind_10) as 10
+          , (bene_mdcr_entlmt_buyin_ind_11, bene_hmo_ind_11) as 11
+          , (bene_mdcr_entlmt_buyin_ind_12, bene_hmo_ind_12) as 12
           )
       )
 where buyin != '0' -- Not entitled
@@ -104,20 +104,20 @@ where buyin != '0' -- Not entitled
 select bene_id, bene_enrollmt_ref_yr, mo, buyin, hmo, extract_dt
 from per_bene_456s
 unpivot(
-        (buyin,hmo) /*add hmo column*/
+        (buyin, hmo)
         for mo in (
-            (mdcr_entlmt_buyin_ind_01,hmo_ind_01) as 1
-          , (mdcr_entlmt_buyin_ind_02,hmo_ind_02) as 2
-          , (mdcr_entlmt_buyin_ind_03,hmo_ind_03) as 3
-          , (mdcr_entlmt_buyin_ind_04,hmo_ind_04) as 4
-          , (mdcr_entlmt_buyin_ind_05,hmo_ind_05) as 5
-          , (mdcr_entlmt_buyin_ind_06,hmo_ind_06) as 6
-          , (mdcr_entlmt_buyin_ind_07,hmo_ind_07) as 7
-          , (mdcr_entlmt_buyin_ind_08,hmo_ind_08) as 8
-          , (mdcr_entlmt_buyin_ind_09,hmo_ind_09) as 9
-          , (mdcr_entlmt_buyin_ind_10,hmo_ind_10) as 10
-          , (mdcr_entlmt_buyin_ind_11,hmo_ind_11) as 11
-          , (mdcr_entlmt_buyin_ind_12,hmo_ind_12) as 12
+            (mdcr_entlmt_buyin_ind_01, hmo_ind_01) as 1
+          , (mdcr_entlmt_buyin_ind_02, hmo_ind_02) as 2
+          , (mdcr_entlmt_buyin_ind_03, hmo_ind_03) as 3
+          , (mdcr_entlmt_buyin_ind_04, hmo_ind_04) as 4
+          , (mdcr_entlmt_buyin_ind_05, hmo_ind_05) as 5
+          , (mdcr_entlmt_buyin_ind_06, hmo_ind_06) as 6
+          , (mdcr_entlmt_buyin_ind_07, hmo_ind_07) as 7
+          , (mdcr_entlmt_buyin_ind_08, hmo_ind_08) as 8
+          , (mdcr_entlmt_buyin_ind_09, hmo_ind_09) as 9
+          , (mdcr_entlmt_buyin_ind_10, hmo_ind_10) as 10
+          , (mdcr_entlmt_buyin_ind_11, hmo_ind_11) as 11
+          , (mdcr_entlmt_buyin_ind_12, hmo_ind_12) as 12
           )
       )
 where buyin != '0' -- Not entitled
