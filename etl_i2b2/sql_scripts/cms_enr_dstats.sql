@@ -77,7 +77,7 @@ with per_bene_mo_13 as (
 select /*+ parallel*/ bene_id, bene_enrollmt_ref_yr, mo, buyin, hmo, extract_dt
 from CMS_DEID.mbsf_ab_summary
 unpivot(
-        (buyin,hmo) /*add hmo column*/
+        (buyin, hmo)
         for mo in (
             (bene_mdcr_entlmt_buyin_ind_01,bene_hmo_ind_01) as 1
           , (bene_mdcr_entlmt_buyin_ind_02,bene_hmo_ind_02) as 2
