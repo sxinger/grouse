@@ -162,8 +162,6 @@ BENE_SMI_CVRAGE_TOT_MONS  (number of months of B coverage for that reference yea
 BENE_HMO_CVRAGE_TOT_MONS  (number of months of HMO coverage for that reference year)
 */
 
-select * from "&&PCORNET_CDM".enrollment;
-
 -- truncate table enrollment;
 delete from "&&PCORNET_CDM".enrollment;
 commit;
@@ -173,10 +171,10 @@ insert /*+ append */ into "&&PCORNET_CDM".enrollment (
 )
 with decode_coverage as (
 select
-         case when hmo = '0' and buyin in ('1','A') then 'A'
-              when hmo = '0' and buyin in ('2','B') then 'B'
-              when hmo = '0' and buyin in ('3','C') then 'AB'
-              when hmo in ('1','2','4','A','B','C') then ('C'||hmo) 
+         case when hmo = '0' and buyin in ('1', 'A') then 'A'
+              when hmo = '0' and buyin in ('2', 'B') then 'B'
+              when hmo = '0' and buyin in ('3', 'C') then 'AB'
+              when hmo in ('1', '2', '4', 'A', 'B', 'C') then ('C'||hmo) 
               else 'OT'
          end as coverage  --add category 'CX' for managed care
        , per_bene_mo.*
